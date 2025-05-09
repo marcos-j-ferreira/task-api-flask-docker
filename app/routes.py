@@ -22,7 +22,7 @@ def hello():
 @app.route('/tarefa/listar')
 def listar():
     try:
-        with open('db.json', 'r') as file:
+        with open('tarefa.json', 'r') as file:
             lista = json.load(file)
             return jsonify(tarefas=lista)
     except Exception as e:
@@ -32,7 +32,7 @@ def listar():
 @app.route('/tarefa/listar/<int:id>', methods=['GET'])
 def listar_por_id(id):
     try:
-        with open('db.json', 'r') as file:
+        with open('tarefa.json', 'r') as file:
             db = json.load(file)
 
             for tarefa in db:
@@ -47,7 +47,7 @@ def listar_por_id(id):
 def adicionar():
     try:
         dados = request.get_json()
-        with open('db.json', 'r') as file:
+        with open('tarefa.json', 'r') as file:
             tarefas = json.load(file)
             novo_id = tarefas[-1]['id'] + 1 if tarefas else 1
 
@@ -59,7 +59,7 @@ def adicionar():
 
         tarefas.append(nova_tarefa)
 
-        with open('db.json', 'w') as arquivo:
+        with open('tarefa.json', 'w') as arquivo:
             json.dump(tarefas, arquivo, indent=4)
 
         return jsonify(sucesso="Tarefa adicionada com sucesso")
@@ -69,12 +69,12 @@ def adicionar():
 @app.route('/tarefa/deletar/<int:id>', methods=['GET'])
 def deletar(id):
     try:
-        with open('db.json', 'r') as file:
+        with open('tarefa.json', 'r') as file:
             db = json.load(file)
 
         db_filtrado = [tarefa for tarefa in db if tarefa['id'] != id]
 
-        with open('db.json', 'w') as arquivo:
+        with open('tarefa.json', 'w') as arquivo:
             json.dump(db_filtrado, arquivo, indent=4)
 
         return jsonify(sucesso="Tarefa deletada com sucesso")
@@ -84,14 +84,14 @@ def deletar(id):
 @app.route('/tarefa/estado/<int:id>')
 def marcar_concluida(id):
     try:
-        with open('db.json', 'r') as file:
+        with open('tarefa.json', 'r') as file:
             db = json.load(file)
 
         for tarefa in db:
             if tarefa['id'] == id:
                 tarefa['concluida'] = True
 
-        with open('db.json', 'w') as arquivo:
+        with open('tarefa.json', 'w') as arquivo:
             json.dump(db, arquivo, indent=4)
 
         return jsonify(sucesso="Tarefa marcada como concluída com sucesso")
