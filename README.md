@@ -32,7 +32,7 @@ task-api-flask-docker/
 ├── app.py                  
 |    ├── __init__.py         # Inicializador da API
 |    ├── routes.py           # Código principal da API
-|    ├── db.json             # "Banco de dados" local em JSON
+|    ├── tarefa.json         # "Banco de dados" local em JSON
 |    ├── Dockerfile          # Configuração da imagem Docker
 |    ├── requirements.txt    # Dependências do projeto
 ├── README.md           # Documentação
@@ -81,7 +81,7 @@ Os testes foram realizados com o **Postman**, criando uma coleção com todas as
 
 ## Sobre o Banco de Dados
 
-Neste projeto optei por **não utilizar um banco de dados real** (como PostgreSQL ou SQLite). Em vez disso, usei um arquivo `db.json` como armazenamento local. Isso permitiu manter o projeto mais leve e focado no principal objetivo: **praticar Docker**. Em projetos futuros, irei incluir bancos reais e ORMs.
+Neste projeto optei por **não utilizar um banco de dados real** (como PostgreSQL ou SQLite). Em vez disso, usei um arquivo `tarefa.json` como armazenamento local. Isso permitiu manter o projeto mais leve e focado no principal objetivo: **praticar Docker**. Em projetos futuros, irei incluir bancos reais e ORMs.
 
 ---
 
