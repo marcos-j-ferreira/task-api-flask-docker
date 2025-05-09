@@ -1,0 +1,5 @@
+*
+!.gitignore
+!db.json
+!Dockerfile
+!routes.py
