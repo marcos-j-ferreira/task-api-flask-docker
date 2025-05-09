@@ -1,0 +1,8 @@
+*
+
+*.pyc
+!.gitignore
+!requirements.txt
+!app/
+!start.sh
+!app/** 
