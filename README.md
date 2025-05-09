@@ -51,8 +51,8 @@ task-api-flask-docker/
 | GET    | `/tarefa/listar`       | Lista todas as tarefas              |
 | GET    | `/tarefa/listar/id`    | Lista uma tarefa específica por ID  |
 | POST   | `/tarefa/adicionar`    | Adiciona uma nova tarefa            |
-| GET    | `/tarefa/deletar`      | Deleta uma tarefa                   |
-| GET    | `/tarefa/estado/`      | Marca uma tarefa como concluída     |
+| GET    | `/tarefa/deletar/:id`  | Deleta uma tarefa                   |
+| GET    | `/tarefa/estado/:id`   | Marca uma tarefa como concluída     |
 
 ---
 
@@ -105,7 +105,6 @@ Neste projeto optei por **não utilizar um banco de dados real** (como PostgreSQ
 
 ## Autor
 
-**Marcos** – Desenvolvedor em formação, focado em backend, Cloud e Machine Learning.
+**Marcos j Lemes** – Desenvolvedor em formação
 
 ---
-
